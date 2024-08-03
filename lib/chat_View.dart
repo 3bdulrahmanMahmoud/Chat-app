@@ -1,7 +1,9 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class ChatView extends StatelessWidget {
-  const ChatView({super.key});
+  const  ChatView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +27,14 @@ class ChatView extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                 itemBuilder: (context, i) {
-                  return ChatBubble(text: "hello");
+                  return const ChatBubble(text: "hello");
                 },
                 itemCount: 8,
               ),
             ),
             TextField(
               decoration: InputDecoration(
-                suffixIcon: Icon(Icons.send),
+                suffixIcon: const Icon(Icons.send),
                 labelText: "send message",
                 border: getBorderStyle(),
                 focusedBorder: getBorderStyle(),
@@ -60,14 +62,14 @@ class ChatBubble extends StatelessWidget {
         padding:
             const EdgeInsets.only(top: 10, right: 20, left: 10, bottom: 20),
         margin: const EdgeInsets.only(left: 10, top: 15),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             color: Colors.grey,
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               topRight: Radius.circular(20),
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20),
             )),
-        child: Text(text, style: TextStyle(fontSize: 16, color: Colors.white)
+        child: Text(text, style: const TextStyle(fontSize: 16, color: Colors.white)
             // customStringStyle.Poppins500Style16.copyWith(color: Colors.white),
             ),
       ),
@@ -78,5 +80,5 @@ class ChatBubble extends StatelessWidget {
 OutlineInputBorder getBorderStyle() {
   return OutlineInputBorder(
       borderRadius: BorderRadius.circular(8),
-      borderSide: BorderSide(color: Colors.grey));
+      borderSide: const BorderSide(color: Colors.grey));
 }
